@@ -1,4 +1,3 @@
-// ignore: file_names
 // data 클래스 작성하기
 class Student {
   int stNum = 0; // none-nullerble

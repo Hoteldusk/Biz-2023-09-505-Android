@@ -11,12 +11,12 @@ void main(List<String> args) {
   /// 함수를 선언할때 매개변수를 {} 로 감싸주고
   /// 값을 전달할때 변수:값 형식으로 전달한다
   /// 위치기반에 비하여 함수의 값이 잘못 전달 되는 것을 방지 할 수 있다
-  result = sayHelloNameParams(age: 33, nation: "광주", name: "홍길동");
+  // result = sayHelloNameParams(age: 33, nation: "광주", name: "홍길동");
   print(result);
 
   /// named parameter 방식의 함술를 선언할때 변수 type 에 null safe(?) 를 지정하면
   /// 변수값을 선택적으로 보내거나 보내지 않아도 된다
   /// 이러한 방식을 Optional Parameter 라고 한다
-  result = sayHelloNameParams(name: "이몽룡");
+  // result = sayHelloNameParams(name: "이몽룡");
   print(result);
 }
