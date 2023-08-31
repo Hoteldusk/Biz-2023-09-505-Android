@@ -1,4 +1,4 @@
-import 'models/Student.dart';
+import 'models/_student.dart';
 
 void main(List<String> args) {
   Student str1 = Student();
