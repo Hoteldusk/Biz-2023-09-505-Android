@@ -26,7 +26,7 @@ class StartPage extends StatefulWidget {
 
 class _StartPage extends State<StartPage> {
   var todoList = [];
-  final _delConfirm = false;
+  // final _delConfirm = false;
 
   // var todoList = [
   //   Todo(
