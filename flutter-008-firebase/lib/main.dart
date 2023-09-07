@@ -13,7 +13,6 @@ void main() async {
   Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-
   runApp(const App());
 }
 
@@ -22,11 +21,9 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var user = FirebaseAuth.instance.currentUser;
-
-    return MaterialApp(
+    return const MaterialApp(
       home: Scaffold(
-        body: user != null ? const MyPage() : const LoginPage(),
+        body: MyPage(),
       ),
     );
   }

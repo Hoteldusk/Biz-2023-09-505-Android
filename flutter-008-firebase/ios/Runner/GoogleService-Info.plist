@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>933563029832-l88vm1m7r581evs0ina41i78tlm5f5sb.apps.googleusercontent.com</string>
+	<string>732559947107-r5q32alec1ot20gbbr1l3mgr2a0ju7ua.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.933563029832-l88vm1m7r581evs0ina41i78tlm5f5sb</string>
+	<string>com.googleusercontent.apps.732559947107-r5q32alec1ot20gbbr1l3mgr2a0ju7ua</string>
 	<key>API_KEY</key>
-	<string>AIzaSyA7tAWWH7IdUf6cA_ftY30JWUqyKjv3AeU</string>
+	<string>AIzaSyAhWYhltbDZXPuKKQI4kkHbk6tPK40ckZg</string>
 	<key>GCM_SENDER_ID</key>
-	<string>933563029832</string>
+	<string>732559947107</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.callor.firebase</string>
 	<key>PROJECT_ID</key>
-	<string>flutter-my-app-c54d1</string>
+	<string>flutter-my-app-73f61</string>
 	<key>STORAGE_BUCKET</key>
-	<string>flutter-my-app-c54d1.appspot.com</string>
+	<string>flutter-my-app-73f61.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:933563029832:ios:b2f276964bbef380f5bb7d</string>
+	<string>1:732559947107:ios:9713199a311cbc88610f56</string>
 </dict>
 </plist>

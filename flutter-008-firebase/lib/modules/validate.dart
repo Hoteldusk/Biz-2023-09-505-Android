@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 
 class CheckValidate {
-  String? emailCheck({required String email, required FocusNode focusNode}) {
+  String? emailCheck({
+    required String email,
+    required FocusNode focusNode,
+  }) {
     if (email.isEmpty) {
       focusNode.requestFocus();
       return "이메일을 입력해 주세요";
     } else {
       const pattern =
           r"^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$";
-
       var regExp = RegExp(pattern);
       if (!regExp.hasMatch(email)) {
         focusNode.requestFocus();
@@ -18,13 +20,17 @@ class CheckValidate {
     return null;
   }
 
-  String? passwordCheck(
-      {required String password, required FocusNode focusNode}) {
+  String? passwordCheck({
+    required String password,
+    required FocusNode focusNode,
+  }) {
     if (password.isEmpty) {
-      return "비밀번호를 입력해주세요";
+      focusNode.requestFocus();
+      return "비밀번호를 입력해 주세요";
     } else {
       const pattern =
-          r"^.*(?=^.{8,15}$)(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&+=]).*$";
+          r"^.*(?=^.{8,}$)(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&+=]).*$";
+
       var regExp = RegExp(pattern);
       if (!regExp.hasMatch(password)) {
         focusNode.requestFocus();

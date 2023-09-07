@@ -1,6 +1,6 @@
 import 'package:firebase/modules/validate.dart';
-import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -33,9 +33,10 @@ class _LoginPageState extends State<LoginPage> {
                   focusNode: _emailFocus,
                 ),
                 decoration: const InputDecoration(
-                    hintText: "이메일을 입력해주세요",
-                    helperText: "이메일형식에 맞도록 입력해 주세요",
-                    helperStyle: TextStyle(color: Colors.blue)),
+                  hintText: "이메일은 입력해 주세요",
+                  helperText: "이메일 형식에 맞도록 입력해 주세요",
+                  helperStyle: TextStyle(color: Colors.blue),
+                ),
               ),
               TextFormField(
                 focusNode: _passwordFocus,
@@ -44,21 +45,22 @@ class _LoginPageState extends State<LoginPage> {
                   focusNode: _passwordFocus,
                 ),
                 decoration: const InputDecoration(
-                    hintText: "비밀번호",
-                    helperText: "특수문자, 대소문자, 숫자를 포함하여 8자 이상",
-                    helperStyle: TextStyle(color: Colors.blue)),
+                  hintText: "비밀번호",
+                  helperText: "특수문자, 대소문자, 숫자 포함하여 8자 이상",
+                ),
               ),
               ElevatedButton(
                 onPressed: () async {
                   _formKey.currentState?.validate();
                   var result =
                       await FirebaseAuth.instance.signInWithEmailAndPassword(
-                    email: "test@test.com",
-                    password: "!Biz8080",
+                    email: "callor@callor.com",
+                    password: "!Korea8080",
                   );
+                  setState(() {});
                 },
                 child: const Text("로그인"),
-              )
+              ),
             ],
           ),
         ),
