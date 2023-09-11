@@ -52,6 +52,7 @@ class _LoginPageState extends State<LoginPage> {
               ElevatedButton(
                 onPressed: () async {
                   _formKey.currentState?.validate();
+                  // ignore: unused_local_variable
                   var result =
                       await FirebaseAuth.instance.signInWithEmailAndPassword(
                     email: "callor@callor.com",
