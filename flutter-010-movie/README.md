@@ -43,3 +43,21 @@ flutter flutter_html
         </intent>
 </queries>
 ```
+
+- 네이버 API 사용 신청 후 api 폴더 생성하고 naver_open_api.dart 파일 생성 아래는 샘플코드
+- <중요> : `.gitignore 에 naver_open_api.*` 추가 
+```dart
+const CLIENT_ID = "아이디";
+const CLIENT_SECRET = "비번키";
+const NAVER_URL = "https://openapi.naver.com/v1/search/movie.json";
+
+class NaverAPI {
+  //Naver 에 영화 정보를 요청하기 위한 method
+  void loadMovie() async {
+    Map<String, String> headers = {
+      "X-Naver-Client-Id": CLIENT_ID,
+      "X-Naver-Client-Secret": CLIENT_SECRET
+    };
+  }
+}
+```
