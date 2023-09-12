@@ -67,6 +67,11 @@ class HomePage extends StatelessWidget {
         child: FloatingActionButton(
           onPressed: onPressed,
           backgroundColor: Colors.red,
+          child: Icon(
+            timerRun ? Icons.pause : Icons.play_arrow_rounded,
+            size: 60,
+            color: Colors.black,
+          ),
         ),
       ),
     );
