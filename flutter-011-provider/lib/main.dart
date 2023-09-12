@@ -26,9 +26,9 @@ class App extends StatelessWidget {
       home: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            fit: BoxFit.cover,
-            image: AssetImage("images/boom.jpg"),
-          ),
+              fit: BoxFit.cover,
+              image: AssetImage("images/boom.jpg"),
+              alignment: Alignment.topCenter),
         ),
         child: Scaffold(
           backgroundColor: Colors.transparent,

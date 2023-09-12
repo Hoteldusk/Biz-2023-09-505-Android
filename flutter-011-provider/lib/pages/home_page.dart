@@ -28,22 +28,47 @@ class HomePage extends StatelessWidget {
     );
 
     return Scaffold(
+      backgroundColor: Colors.transparent,
       body: Center(
-          child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            strTimer,
-            style: const TextStyle(fontSize: 30),
-          ),
-          IconButton(
-            onPressed: onPressed,
-            icon: timerRun
-                ? const Icon(Icons.stop_circle)
-                : const Icon(Icons.play_circle_fill),
-          )
-        ],
-      )),
+        child: Stack(
+          children: [
+            Text(
+              strTimer,
+              style: TextStyle(
+                  fontSize: 80,
+                  fontWeight: FontWeight.w500,
+                  foreground: Paint()
+                    ..style = PaintingStyle.stroke
+                    ..strokeWidth = 5
+                    ..color = Colors.amber),
+            ),
+            Text(
+              strTimer,
+              style: const TextStyle(
+                fontSize: 80,
+                fontWeight: FontWeight.bold,
+                color: Colors.green,
+              ),
+            ),
+            // IconButton(
+            //   onPressed: onPressed,
+            //   icon: timerRun
+            //       ? const Icon(Icons.stop_circle)
+            //       : const Icon(Icons.play_circle_fill),
+            // )
+          ],
+        ),
+      ),
+      floatingActionButtonLocation:
+          FloatingActionButtonLocation.miniCenterFloat,
+      floatingActionButton: SizedBox(
+        width: 100,
+        height: 100,
+        child: FloatingActionButton(
+          onPressed: onPressed,
+          backgroundColor: Colors.red,
+        ),
+      ),
     );
   }
 }
