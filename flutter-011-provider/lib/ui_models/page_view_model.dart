@@ -10,6 +10,7 @@ class PageViewModel extends ChangeNotifier {
 
   void pageViewChange(newPageIndex) {
     _pageIndex = newPageIndex;
+    notifyListeners();
   }
 
   void bottomNavTap(pageIndex) {
@@ -18,5 +19,6 @@ class PageViewModel extends ChangeNotifier {
       duration: const Duration(seconds: 1),
       curve: Curves.ease,
     );
+    notifyListeners();
   }
 }
