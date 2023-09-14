@@ -1,3 +1,6 @@
+import 'package:flutter/gestures.dart';
+import 'package:url_launcher/url_launcher.dart';
+
 import './api/naver_open_api.dart';
 import './models/naver_book_dto.dart';
 import 'package:flutter/material.dart';
@@ -29,10 +32,17 @@ class _ViewBooksPageState extends State<ViewBooksPage> {
   // Future<List<NaverBookDto>>
   Future<List<NaverBookDto>>? resultBooks = NaverOpenAPI().loadBooks();
 
-  void searchBooks(search) {
+  // resultBooks state 변수를 변화시키는 함수
+  // search 라는 매개변수에 전달된 값을 받아서
+  void searchBooks(String search) {
+    if (search.isEmpty) return;
+    // NaverOpenAPI().loadBooks() 에게 전달하고, 검색어에 해당하는
+    // 결과를 return 받기
     Future<List<NaverBookDto>>? searchResultBooks =
         NaverOpenAPI().loadBooks(search);
 
+    // return 받은 결과를 resultBooks state 변수에 반영하여
+    // List 화면을 다시 그리기
     setState(() {
       resultBooks = searchResultBooks;
     });
@@ -68,7 +78,9 @@ class SearchBox extends StatelessWidget {
           child: TextField(
             controller: searchInputController,
             keyboardType: TextInputType.text,
+            // 키보드에 검색버튼이 나타나게 하는 기능
             textInputAction: TextInputAction.search,
+            // 키보드의 검색버튼을 클릭했을때 실행할 함수
             onSubmitted: (value) => searchBooks(value),
             decoration: const InputDecoration(
               border: OutlineInputBorder(),
@@ -144,14 +156,26 @@ class BookItemView extends StatelessWidget {
           child: Text(bookItem.description!),
         ),
         paddingText(
-          child: Text(bookItem.link!),
+          child: RichText(
+            text: TextSpan(
+                style: const TextStyle(fontSize: 15, color: Colors.black),
+                children: [
+                  TextSpan(
+                    text: "네이버 바로가기",
+                    style: const TextStyle(fontSize: 15, color: Colors.green),
+                    recognizer: TapGestureRecognizer()
+                      ..onTap = () => launchUrl(Uri.parse(bookItem.link!)),
+                  )
+                ]),
+            // onPressed: () => launchUrl(Uri.parse(bookItem.link!)),
+          ),
         ),
       ],
     );
   }
 
   // 함수로 분리한 후 return type을 Widget으로 변경
-  Widget paddingText({required Text child}) {
+  Widget paddingText({required Widget child}) {
     return Padding(
       padding: const EdgeInsets.all(20),
       child: child,
